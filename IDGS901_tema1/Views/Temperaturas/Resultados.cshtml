@@ -1,0 +1,42 @@
+﻿@model IDGS901_tema1.Models.Grados
+
+@{
+    ViewBag.Title = "Resultados";
+}
+
+<h2>Resultados</h2>
+
+<div>
+    <h4>Grados</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Temperatura)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Temperatura)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Eleccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Eleccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Res)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Res)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

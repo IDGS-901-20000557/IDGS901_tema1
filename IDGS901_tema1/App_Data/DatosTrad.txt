@@ -1,0 +1,7 @@
+Amarillo,Yellow
+Nube,Cloud
+Papel,Paper
+Perro,Dog
+Blanco,White
+Pluma,Pen
+Pelota,Ball

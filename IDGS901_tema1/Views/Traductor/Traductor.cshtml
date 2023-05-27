@@ -1,0 +1,63 @@
+﻿@model IDGS901_tema1.Models.traductor
+
+@{
+    ViewBag.Title = "Traductor";
+}
+
+<h2>Traductor</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>traductor</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="form-group">
+        <label>Palabra:</label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.espanniol, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.espanniol, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-10">
+            <div class="checkbox">
+                @Html.RadioButtonFor(model => model.eleccion, "1")@Html.Label("Ingles")
+                @Html.RadioButtonFor(model => model.eleccion, "2")@Html.Label("Español")
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Traducir" class="btn btn-default" />
+        </div>
+    </div>
+
+
+    @if (ViewBag.resultado != null)
+    { 
+        <div class="form-group">
+            <label>Traducción:</label>
+            <div class="col-md-10">
+                <h1>@ViewBag.resultado</h1>
+            </div>
+        </div>
+    }
+
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Registrar")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
